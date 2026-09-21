@@ -14,10 +14,10 @@ export default function Quote() {
       <div className={`${s.wrap} ${s.quoteGrid}`}>
         <div>
           <span className={s.eyebrow}>FREIGHT CALCULATOR</span>
-          <h2>Compare surface cargo rates in seconds</h2>
-          <p>Enter your shipment details and see rates from multiple verified transporters — part loads and full consignments, all in one place.</p>
+          <h2>We compare 12 carriers in 3 seconds. We pick the best for you.</h2>
+          <p>Enter your shipment details once and see rates from every carrier side by side, so you never overpay for heavy cargo again.</p>
           <ul className={s.quoteBullets}>
-            {['Rates from multiple transporters', 'No hidden charges', 'Pan India coverage to 28,000+ PIN codes'].map((t) => (
+            {['Compare 12 carriers in 3 seconds', 'Save 30–40% on freight', 'Pan India coverage to 28,000+ PIN codes'].map((t) => (
               <li key={t}><span className={s.tick}><Icon name="check" size={16} /></span>{t}</li>
             ))}
           </ul>

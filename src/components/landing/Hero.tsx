@@ -7,7 +7,7 @@ export default function Hero() {
       <div className={s.heroScene} aria-hidden="true" />
       <div className={`${s.wrap} ${s.heroInner}`}>
         <div className={s.heroText}>
-          <h1>ONE PLATFORM.<br /><span>EVERYWHERE IN INDIA.</span></h1>
+          <h1>BHARAT KA HEAVY CARGO,<br /><span>AB APP PE.</span></h1>
           <p className={s.lead}>Compare surface cargo rates. Choose the best vendor. Ship with confidence.</p>
 
           <ul className={s.heroPoints}>

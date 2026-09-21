@@ -15,7 +15,7 @@ export default function Faq() {
       <div className={`${s.wrap} ${s.faqGrid}`}>
         <div>
           <span className={s.eyebrow}>FAQ</span>
-          <h2>Frequently<br />Asked Questions</h2>
+          <h2>Common questions.<br />Straight answers.</h2>
           <p>Still have questions? We&apos;re here to help.</p>
         </div>
         <div className={s.faqList}>
