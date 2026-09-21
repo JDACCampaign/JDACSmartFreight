@@ -1,0 +1,123 @@
+@import '@/styles/variables.scss';
+
+.container {
+  h2 {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.formCard {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  margin-bottom: $spacing-xl;
+
+  h3 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.tableContainer {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: $light-bg;
+
+    th {
+      padding: $spacing-md $spacing-lg;
+      text-align: left;
+      font-weight: $font-weight-semibold;
+      color: $dark-text;
+      border-bottom: 2px solid $border-light;
+      font-size: $font-size-sm;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-light;
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: $light-bg;
+      }
+
+      td {
+        padding: $spacing-md $spacing-lg;
+        color: $light-text;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}
+
+.badgeActive,
+.badgeInactive,
+.badgeNew {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+}
+
+.badgeActive {
+  background-color: rgba($success, 0.1);
+  color: $success;
+}
+
+.badgeInactive {
+  background-color: rgba($error, 0.1);
+  color: $error;
+}
+
+.badgeNew {
+  background-color: rgba($primary-blue, 0.1);
+  color: $primary-blue;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: $primary-blue;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: 0 $spacing-md;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-orange;
+  }
+
+  &:not(:last-child) {
+    border-right: 1px solid $border-light;
+  }
+}

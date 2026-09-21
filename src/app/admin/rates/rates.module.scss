@@ -1,0 +1,16 @@
+@import '@/styles/variables.scss';
+
+.container {
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+
+  h2 {
+    margin-bottom: $spacing-lg;
+  }
+
+  p {
+    color: $light-text;
+  }
+}

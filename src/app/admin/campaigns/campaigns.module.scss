@@ -1,0 +1,174 @@
+@import '@/styles/variables.scss';
+
+.container {
+  h2 {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.formCard {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  margin-bottom: $spacing-xl;
+
+  h3 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.campaignsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-lg;
+}
+
+.campaignCard {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  border: 1px solid $border-light;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: $primary-blue;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  h3 {
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.cardInfo {
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $border-light;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-sm;
+
+  span {
+    color: $light-text;
+  }
+
+  strong {
+    color: $dark-text;
+  }
+}
+
+.progress {
+  margin-bottom: $spacing-lg;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-sm;
+  color: $light-text;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: $light-bg;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, $primary-blue, $primary-orange);
+  transition: width $transition-base;
+}
+
+.badgeActive,
+.badgeDraft,
+.badgePaused,
+.badgeCompleted {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+}
+
+.badgeActive {
+  background-color: rgba($success, 0.1);
+  color: $success;
+}
+
+.badgeDraft {
+  background-color: rgba($primary-blue, 0.1);
+  color: $primary-blue;
+}
+
+.badgePaused {
+  background-color: rgba($warning, 0.1);
+  color: $warning;
+}
+
+.badgeCompleted {
+  background-color: rgba($primary-orange, 0.1);
+  color: $primary-orange;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $border-light;
+}
+
+.actionBtn {
+  flex: 1;
+  padding: $spacing-sm $spacing-md;
+  background-color: $light-bg;
+  border: none;
+  border-radius: $radius-md;
+  color: $primary-blue;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $primary-blue;
+    color: $white;
+  }
+}

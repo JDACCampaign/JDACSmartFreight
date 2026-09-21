@@ -1,0 +1,68 @@
+// JDAC Brand Colors
+$primary-blue: #24418D;
+$primary-orange: #F15A25;
+$white: #FFFFFF;
+$light-bg: #F7F9FC;
+$dark-text: #1A1A1A;
+$light-text: #4A4A4A;
+$border-light: #E0E0E0;
+$border-dark: #D0D0D0;
+$success: #10B981;
+$warning: #F59E0B;
+$error: #EF4444;
+
+// Typography
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 32px;
+$font-size-4xl: 40px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 24px;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+// Z-index
+$z-sticky: 10;
+$z-dropdown: 100;
+$z-modal: 1000;
+$z-toast: 1100;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Transitions
+$transition-fast: 150ms ease-in-out;
+$transition-base: 200ms ease-in-out;
+$transition-slow: 300ms ease-in-out;

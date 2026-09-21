@@ -1,0 +1,104 @@
+@import '@/styles/variables.scss';
+
+.footer {
+  background-color: $dark-text;
+  color: $white;
+  padding: $spacing-3xl 0 $spacing-xl;
+  margin-top: $spacing-3xl;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+  border-bottom: 1px solid rgba($white, 0.1);
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.brand {
+  p {
+    color: rgba($white, 0.7);
+    font-size: $font-size-sm;
+    line-height: 1.6;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: $spacing-lg;
+}
+
+.brandName {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-orange;
+}
+
+.tagline {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $primary-blue;
+  letter-spacing: 0.5px;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xl;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+  }
+
+  h4 {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-md;
+    color: $white;
+  }
+
+  a {
+    display: block;
+    color: rgba($white, 0.7);
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-lg;
+
+  p {
+    font-size: $font-size-sm;
+    color: rgba($white, 0.6);
+    margin: 0;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cta {
+  flex-shrink: 0;
+}

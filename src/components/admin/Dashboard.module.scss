@@ -1,0 +1,178 @@
+@import '@/styles/variables.scss';
+
+.dashboard {
+  h2 {
+    margin-bottom: $spacing-xl;
+  }
+
+  h3 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  border-left: 4px solid $primary-blue;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  &.orange {
+    border-left-color: $primary-orange;
+  }
+
+  &.green {
+    border-left-color: $success;
+  }
+
+  &.purple {
+    border-left-color: #8B5CF6;
+  }
+
+  &.red {
+    border-left-color: $error;
+  }
+}
+
+.statLabel {
+  font-size: $font-size-sm;
+  color: $light-text;
+  margin-bottom: $spacing-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $dark-text;
+}
+
+.chartsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chartCard {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.chartPlaceholder {
+  height: 300px;
+  background-color: $light-bg;
+  border-radius: $radius-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $light-text;
+  text-align: center;
+  gap: $spacing-md;
+
+  p {
+    margin: 0;
+    font-size: $font-size-sm;
+  }
+}
+
+.recentLeads {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+
+  thead {
+    background-color: $light-bg;
+
+    th {
+      padding: $spacing-md;
+      text-align: left;
+      font-weight: $font-weight-semibold;
+      color: $dark-text;
+      border-bottom: 2px solid $border-light;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-light;
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: $light-bg;
+      }
+
+      td {
+        padding: $spacing-md;
+        color: $light-text;
+      }
+    }
+  }
+}
+
+.badgeNew,
+.badgeContacted,
+.badgeQualified {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+}
+
+.badgeNew {
+  background-color: rgba($primary-blue, 0.1);
+  color: $primary-blue;
+}
+
+.badgeContacted {
+  background-color: rgba($primary-orange, 0.1);
+  color: $primary-orange;
+}
+
+.badgeQualified {
+  background-color: rgba($success, 0.1);
+  color: $success;
+}

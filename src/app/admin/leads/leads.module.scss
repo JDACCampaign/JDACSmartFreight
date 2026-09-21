@@ -1,0 +1,131 @@
+@import '@/styles/variables.scss';
+
+.container {
+  h2 {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: $spacing-lg;
+    text-align: center;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.filterSelect {
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $border-light;
+  border-radius: $radius-md;
+  background-color: $white;
+  cursor: pointer;
+  font-size: $font-size-sm;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-blue;
+  }
+}
+
+.tableContainer {
+  background-color: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+
+  thead {
+    background-color: $light-bg;
+
+    th {
+      padding: $spacing-md $spacing-lg;
+      text-align: left;
+      font-weight: $font-weight-semibold;
+      color: $dark-text;
+      border-bottom: 2px solid $border-light;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-light;
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: $light-bg;
+      }
+
+      td {
+        padding: $spacing-md $spacing-lg;
+        color: $light-text;
+      }
+    }
+  }
+}
+
+.badgeNew,
+.badgeContacted,
+.badgeQualified,
+.badgeConverted {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+}
+
+.badgeNew {
+  background-color: rgba($primary-blue, 0.1);
+  color: $primary-blue;
+}
+
+.badgeContacted {
+  background-color: rgba($primary-orange, 0.1);
+  color: $primary-orange;
+}
+
+.badgeQualified {
+  background-color: rgba($success, 0.1);
+  color: $success;
+}
+
+.badgeConverted {
+  background-color: rgba($primary-blue, 0.1);
+  color: $primary-blue;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: $primary-blue;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: 0;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}

@@ -1,0 +1,253 @@
+@import '@/styles/variables.scss';
+
+.container {
+  padding: $spacing-2xl 0;
+  background-color: $light-bg;
+  min-height: 100vh;
+
+  h2 {
+    margin-bottom: $spacing-2xl;
+    color: $dark-text;
+  }
+}
+
+.form {
+  background-color: $white;
+  padding: $spacing-2xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  margin-bottom: $spacing-2xl;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg;
+  }
+}
+
+// Results Section
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-2xl;
+  padding: $spacing-lg;
+  background-color: $light-bg;
+  border-radius: $radius-lg;
+
+  h2 {
+    margin: 0;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    gap: $spacing-md;
+    text-align: center;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+  padding: $spacing-lg;
+  background-color: $light-bg;
+  border-radius: $radius-lg;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.sortBy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  label {
+    font-weight: $font-weight-semibold;
+    color: $dark-text;
+    font-size: $font-size-sm;
+  }
+
+  select {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-light;
+    border-radius: $radius-md;
+    background-color: $white;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-blue;
+    }
+  }
+}
+
+// Recommendation Section
+.recommendation {
+  background: linear-gradient(135deg, rgba($primary-blue, 0.05) 0%, rgba($primary-orange, 0.05) 100%);
+  border: 2px solid $primary-orange;
+  border-radius: $radius-lg;
+  padding: $spacing-2xl;
+  margin-bottom: $spacing-2xl;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg;
+  }
+}
+
+.recommendationHeader {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $primary-orange;
+  margin-bottom: $spacing-lg;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.recommendationContent {
+  h3 {
+    margin-bottom: $spacing-lg;
+    color: $dark-text;
+  }
+}
+
+.recommendedCard {
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  border-left: 6px solid $primary-orange;
+  box-shadow: $shadow-md;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg;
+  }
+}
+
+.vendorName {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $dark-text;
+  margin-bottom: $spacing-sm;
+}
+
+.vendorPrice {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $primary-blue;
+  margin-bottom: $spacing-md;
+}
+
+.vendorDelivery {
+  font-size: $font-size-sm;
+  color: $light-text;
+  margin-bottom: $spacing-lg;
+}
+
+.reason {
+  color: $light-text;
+  margin-bottom: $spacing-lg;
+}
+
+// Vendors Section
+.vendorsSection {
+  h3 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.vendorsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vendorCard {
+  position: relative;
+  background-color: $white;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: $primary-blue;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  background-color: $primary-blue;
+  color: $white;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  .vendorCard:nth-child(2) & {
+    background-color: $primary-orange;
+  }
+
+  .vendorCard:nth-child(3) & {
+    background-color: $success;
+  }
+}
+
+.newBadge {
+  position: absolute;
+  top: $spacing-md;
+  left: $spacing-md;
+  font-size: $font-size-lg;
+}
+
+.vendorInfo {
+  h4 {
+    margin: 0 0 $spacing-lg 0;
+    color: $dark-text;
+  }
+}
+
+.price {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-blue;
+  margin-bottom: $spacing-sm;
+}
+
+.service {
+  font-size: $font-size-xs;
+  color: $light-text;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.delivery {
+  font-size: $font-size-sm;
+  color: $success;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-lg;
+}
+
+.rating {
+  font-size: $font-size-sm;
+  color: $warning;
+  margin-bottom: $spacing-lg;
+}
+
+.vendorCard button {
+  margin-top: auto;
+}

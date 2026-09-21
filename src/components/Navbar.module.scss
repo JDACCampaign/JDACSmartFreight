@@ -1,0 +1,73 @@
+@import '@/styles/variables.scss';
+
+.navbar {
+  background-color: $white;
+  border-bottom: 1px solid $border-light;
+  padding: $spacing-md 0;
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  box-shadow: $shadow-sm;
+
+  div {
+    gap: $spacing-2xl;
+
+    @media (max-width: $breakpoint-md) {
+      gap: $spacing-lg;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-blue;
+}
+
+.tagline {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $primary-orange;
+  letter-spacing: 0.5px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+
+  a {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $light-text;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    gap: $spacing-md;
+
+    a {
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+.adminLink {
+  color: $primary-orange !important;
+
+  &:hover {
+    color: darken($primary-orange, 10%) !important;
+  }
+}

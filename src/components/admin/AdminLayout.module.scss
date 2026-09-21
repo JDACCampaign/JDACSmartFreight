@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+
+$navy: #0f2a66;
+$navy-dark: #0a1d4d;
+$bg: #f3f6fc;
+
+.layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; background: $bg; }
+
+.sidebar {
+  position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 20px;
+  padding: 24px 14px; background: linear-gradient(180deg, $navy, $navy-dark); color: #fff;
+}
+.logo { display: flex; flex-direction: column; padding: 0 10px 8px; line-height: 1; &:hover { color: #fff; } }
+.brand { font: 900 40px/1 Impact, 'Arial Narrow Bold', sans-serif; letter-spacing: 3px; color: #fff; em { font-style: normal; color: $primary-orange; } }
+.tag { font-size: 8px; font-weight: 700; letter-spacing: 1.6px; margin-top: 4px; color: rgba(255, 255, 255, 0.8); }
+
+.menu { display: flex; flex-direction: column; gap: 4px; flex: 1; overflow-y: auto; }
+.menuItem {
+  display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 8px;
+  font-size: 15px; color: rgba(255, 255, 255, 0.85); transition: background $transition-fast;
+  &:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+}
+.active { background: #1f4fc2; color: #fff; font-weight: 600; }
+
+.promo {
+  display: flex; flex-direction: column; gap: 6px; justify-content: flex-end; min-height: 170px; padding: 16px; border-radius: 12px; font-size: 12px;
+  background: linear-gradient(180deg, rgba(10, 29, 77, 0.2), rgba(10, 29, 77, 0.95)), linear-gradient(135deg, #3a5da8, #1b2f63);
+  strong { font-size: 18px; line-height: 1.2; }
+}
+
+.main { min-width: 0; display: flex; flex-direction: column; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 20px 28px 8px; }
+.titleBox { display: flex; align-items: center; gap: 14px;
+  h1 { font-size: 26px; margin: 0; color: #0b1f4d; line-height: 1.1; } p { margin: 2px 0 0; font-size: 13px; } }
+.titleIcon { color: $primary-blue; }
+.headerActions { display: flex; align-items: center; gap: 20px; }
+.search { display: flex; align-items: center; gap: 8px; width: 230px; padding: 0 12px; background: #fff; border: 1px solid #dbe3f1; border-radius: 8px; color: $light-text;
+  input { flex: 1; border: 0; outline: 0; padding: 11px 0; font-size: 13px; background: transparent; min-width: 0; } }
+.bell { position: relative; border: 0; background: none; color: $navy; cursor: pointer;
+  span { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; display: grid; place-items: center; border-radius: 50%; background: $error; color: #fff; font-size: 10px; font-weight: 700; } }
+.user { display: flex; align-items: center; gap: 10px; strong { display: block; font-size: 13px; color: #0b1f4d; } small { font-size: 11px; color: $light-text; } }
+.avatar { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: $primary-blue; color: #fff; font-weight: 700; }
+
+.content { padding: 12px 28px 32px; }
+
+@media (max-width: $breakpoint-lg) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .menu { flex-direction: row; flex-wrap: wrap; flex: 1 1 100%; }
+  .menuItem { padding: 8px 12px; font-size: 13px; }
+  .promo { display: none; }
+  .search { width: 100%; }
+}
