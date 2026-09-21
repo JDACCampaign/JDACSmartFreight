@@ -1,20 +1,18 @@
 import Icon from './Icon';
 import s from './Landing.module.scss';
 import { WHATSAPP } from './Header';
+import ServiceArt from './ServiceArt';
+import { getContent } from '@/lib/siteContent';
 
-const STATS = [
-  ['users', '10,000+', 'Shipments Managed'], ['pin', '28,000+', 'PIN Codes Covered'],
-  ['truck', '500+', 'Transport Partners'], ['star', '99%', 'Customer Satisfaction'],
-];
-
-export function Stats() {
+export async function Stats() {
+  const { stats } = await getContent();
   return (
     <div className={`${s.wrap} ${s.statsWrap}`}>
-      <div className={s.stats}>
-        {STATS.map(([i, n, l]) => (
-          <div key={l} className={s.stat}>
-            <span className={s.statIcon}><Icon name={i} size={30} /></span>
-            <div><strong>{n}</strong><small>{l}</small></div>
+      <div className={s.stats} style={{ gridTemplateColumns: `repeat(${Math.min(stats.length, 4)}, 1fr)` }}>
+        {stats.map((st) => (
+          <div key={st.label} className={s.stat}>
+            <span className={s.statIcon}><Icon name={st.icon} size={30} /></span>
+            <div><strong>{st.value}</strong><small>{st.label}</small></div>
           </div>
         ))}
       </div>
@@ -23,11 +21,10 @@ export function Stats() {
 }
 
 const SERVICES = [
-  ['Parcel & Small Cargo', 'Cost-effective shipping for small parcels and documents.', '#c9a26b'],
-  ['Part Load (LTL)', 'Share space, save cost. Ideal for growing businesses.', '#b98c55'],
-  ['Full Truck Load (FTL)', 'Dedicated trucks for large shipments.', '#5f7fa8'],
-  ['Special Cargo', 'ODC, heavy equipment, project cargo and more.', '#e0b526'],
-];
+  ['Parcel & Small Cargo', 'Cost-effective shipping for small parcels and documents.', 'parcel'],
+  ['Surface Cargo (Part Load)', 'Share space, save cost. Ideal for growing businesses.', 'part'],
+  ['Special Cargo', 'ODC, heavy equipment, project cargo and more.', 'special'],
+] as const;
 
 export function Services() {
   return (
@@ -37,15 +34,15 @@ export function Services() {
           <div>
             <span className={s.eyebrow}>OUR SERVICES</span>
             <h2>Complete Surface<br />Logistics Solutions</h2>
-            <p>From small parcels to full truck loads, JDAC connects you with the right transporter at the best rate &mdash; all in one place.</p>
+            <p>From small parcels to part loads, JDAC connects you with the right transporter at the best rate &mdash; all in one place.</p>
           </div>
           <a href="#services" className={`${s.btn} ${s.btnOutline} ${s.btnSm}`}>Explore All Services <Icon name="arrow" size={14} /></a>
         </div>
         <div className={s.cards4}>
-          {SERVICES.map(([t, d, c]) => (
+          {SERVICES.map(([t, d, kind]) => (
             <article key={t} className={s.svcCard}>
-              <div className={s.svcImg} style={{ background: `linear-gradient(135deg, ${c}, #2b2b2b)` }}>
-                <Icon name="box" size={56} />
+              <div className={s.svcImg}>
+                <ServiceArt kind={kind} />
               </div>
               <div className={s.svcBody}>
                 <h4>{t}</h4>
@@ -102,11 +99,6 @@ const WHY = [
   ['shield', 'Safe & Reliable', 'Your cargo, our priority'],
 ];
 
-const CLIENTS = [
-  ['amazon', '#111'], ['blinkit', '#111'], ['zepto', '#c2185b'], ['Flipkart', '#2874f0'],
-  ['meesho', '#c2185b'], ['Reliance', '#d32f2f'], ['DMart', '#1b5e20'],
-];
-
 export function Why() {
   return (
     <section id="why" className={s.section}>
@@ -126,15 +118,6 @@ export function Why() {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className={s.clients}>
-          <span className={s.eyebrow}>TRUSTED BY BUSINESSES ACROSS INDIA</span>
-          <h2>Our Clients</h2>
-          <p>From manufacturers to e-commerce brands, thousands trust JDAC for their logistics needs.</p>
-          <div className={s.logos}>
-            {CLIENTS.map(([n, c]) => <span key={n} style={{ color: c }}>{n}</span>)}
-          </div>
         </div>
       </div>
     </section>

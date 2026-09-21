@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Icon from '@/components/landing/Icon';
 import styles from './AdminLayout.module.scss';
@@ -14,6 +16,7 @@ const menuItems = [
   { label: 'Routes', page: 'routes', icon: 'pin' },
   { label: 'Leads', page: 'leads', icon: 'users' },
   { label: 'Campaigns', page: 'campaigns', icon: 'bell' },
+  { label: 'Website', page: 'content', icon: 'star' },
   { label: 'Customers', page: 'customers', icon: 'headset' },
   { label: 'Analytics', page: 'analytics', icon: 'compare' },
   { label: 'Settings', page: 'settings', icon: 'shield' },
@@ -21,17 +24,17 @@ const menuItems = [
 
 const SUBTITLES: Record<string, string> = {
   dashboard: 'Snapshot of freight comparisons, leads and campaign performance.',
+  content: 'Edit what visitors see on the public website.',
 };
 
 export default function AdminLayout({ children, currentPage }: AdminLayoutProps) {
   const current = menuItems.find((m) => m.page === currentPage);
-
   return (
     <div className={styles.layout}>
       <aside className={styles.sidebar}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.brand}>JD<em>A</em>C</span>
-          <span className={styles.tag}>THE LOGISTICS AGGREGATOR</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/jdac-logo-light.png" alt="JDAC - The Logistics Aggregator" className={styles.logoImg} />
         </Link>
 
         <nav className={styles.menu}>
@@ -71,8 +74,8 @@ export default function AdminLayout({ children, currentPage }: AdminLayoutProps)
               <Icon name="bell" size={22} /><span>3</span>
             </button>
             <div className={styles.user}>
-              <span className={styles.avatar}>DS</span>
-              <div><strong>Darshan Soni</strong><small>Managing Director</small></div>
+              <span className={styles.avatar}>AD</span>
+              <div><strong>Admin</strong><small>JDAC</small></div>
               <Icon name="chevron" size={16} />
             </div>
           </div>

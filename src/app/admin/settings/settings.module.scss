@@ -1,16 +1,59 @@
-@import '@/styles/variables.scss';
+@use '../../../styles/variables' as *;
 
-.container {
-  background-color: $white;
-  padding: $spacing-xl;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-md;
+$ink: #0b1f4d;
+$line: #e3e8f1;
 
-  h2 {
-    margin-bottom: $spacing-lg;
-  }
+.layout { display: grid; grid-template-columns: 250px 1fr; gap: 18px; align-items: start; }
 
-  p {
-    color: $light-text;
-  }
+.nav { display: flex; flex-direction: column; gap: 4px; background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 2px 10px rgba(15, 37, 87, 0.05);
+  button { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 0; border-radius: 8px; background: transparent; font: 500 14px inherit; color: $ink; cursor: pointer; text-align: left;
+    &:hover { background: #f3f6fc; } } }
+.navOn { background: #e4ecfb !important; color: #1f4fc2 !important; font-weight: 600 !important; }
+
+.panel { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 10px rgba(15, 37, 87, 0.05); }
+.panelHead { padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid $line; h2 { font-size: 20px; color: $ink; margin-bottom: 4px; } p { margin: 0; font-size: 13px; } }
+
+.grid, .stack { label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: $ink; } }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.wide { grid-column: 1 / -1; }
+.narrow { max-width: 280px; }
+
+.panel input:not([type='checkbox']), .panel select, .panel textarea {
+  width: 100%; padding: 11px 12px; border: 1px solid #dbe3f1; border-radius: 8px; font: 400 14px inherit; color: $dark-text; background: #fff;
+  &:focus { outline: 2px solid rgba(31, 79, 194, 0.3); border-color: #1f4fc2; }
+}
+
+// Toggle switch
+.toggleRow { position: relative; flex-direction: row !important; align-items: center; justify-content: space-between; gap: 16px !important; padding: 14px 16px; border: 1px solid $line; border-radius: 10px; cursor: pointer;
+  strong { display: block; font-size: 14px; color: $ink; } small { display: block; font-size: 12px; font-weight: 400; color: $light-text; margin-top: 2px; }
+  input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; margin: 0; }
+  i { flex: none; position: relative; width: 42px; height: 24px; border-radius: 12px; background: #c9d3e6; transition: background $transition-base;
+    &::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform $transition-base; } }
+  input:checked + i { background: #1f4fc2; &::after { transform: translateX(18px); } }
+  input:focus-visible + i { outline: 2px solid rgba(31, 79, 194, 0.5); outline-offset: 2px; } }
+
+// Team
+.members { list-style: none; display: flex; flex-direction: column; gap: 10px;
+  li { display: grid; grid-template-columns: 44px 1fr 140px auto; align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid $line; border-radius: 10px; }
+  strong { display: block; font-size: 14px; color: $ink; } small { font-size: 12px; color: $light-text; } }
+.avatar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #1f4fc2; color: #fff; font-size: 13px; font-weight: 700; }
+.invite { display: grid; grid-template-columns: 1fr 1.3fr 140px auto; gap: 10px; }
+
+.primary, .ghost, .danger { padding: 10px 18px; border-radius: 8px; font: 600 13px inherit; cursor: pointer; }
+.primary { background: #1f4fc2; color: #fff; border: 1px solid #1f4fc2; &:hover:not(:disabled) { background: #173f9e; } &:disabled { opacity: 0.45; cursor: not-allowed; } }
+.ghost { background: #fff; color: $ink; border: 1px solid #dbe3f1; &:hover { background: #f3f6fc; } }
+.danger { background: #fff; color: #c02626; border: 1px solid #f3c9c9; &:hover:not(:disabled) { background: #fdeaea; } &:disabled { opacity: 0.4; cursor: not-allowed; } }
+
+.footer { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid $line; }
+.ok { margin-right: auto; color: $success; font-size: 13px; font-weight: 600; }
+.note { margin: 12px 0 0; font-size: 12px; text-align: right; }
+
+@media (max-width: $breakpoint-lg) {
+  .layout { grid-template-columns: 1fr; }
+  .nav { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: $breakpoint-md) {
+  .grid, .invite { grid-template-columns: 1fr; }
+  .members li { grid-template-columns: 44px 1fr; }
 }

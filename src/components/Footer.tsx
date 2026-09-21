@@ -8,8 +8,8 @@ export default function Footer() {
         <div className={styles.content}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span className={styles.brandName}>JDAC</span>
-              <span className={styles.tagline}>THE LOGISTICS AGGREGATOR</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/jdac-logo-light.png" alt="JDAC - The Logistics Aggregator" height={48} />
             </div>
             <p>Compare freight rates from multiple surface cargo vendors and find the right combination of price, delivery time and serviceability.</p>
           </div>

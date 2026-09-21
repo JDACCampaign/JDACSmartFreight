@@ -11,6 +11,7 @@ $bg: #f3f6fc;
   padding: 24px 14px; background: linear-gradient(180deg, $navy, $navy-dark); color: #fff;
 }
 .logo { display: flex; flex-direction: column; padding: 0 10px 8px; line-height: 1; &:hover { color: #fff; } }
+.logoImg { width: 170px; height: auto; display: block; }
 .brand { font: 900 40px/1 Impact, 'Arial Narrow Bold', sans-serif; letter-spacing: 3px; color: #fff; em { font-style: normal; color: $primary-orange; } }
 .tag { font-size: 8px; font-weight: 700; letter-spacing: 1.6px; margin-top: 4px; color: rgba(255, 255, 255, 0.8); }
 
@@ -51,3 +52,4 @@ $bg: #f3f6fc;
   .promo { display: none; }
   .search { width: 100%; }
 }
+

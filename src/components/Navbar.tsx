@@ -6,8 +6,8 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className="container flex-between">
         <Link href="/" className={styles.logo}>
-          <span className={styles.brand}>JDAC</span>
-          <span className={styles.tagline}>THE LOGISTICS AGGREGATOR</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/jdac-logo.png" alt="JDAC - The Logistics Aggregator" height={44} />
         </Link>
 
         <div className={styles.navLinks}>

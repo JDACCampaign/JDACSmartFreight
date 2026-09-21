@@ -1,16 +1,27 @@
-@import '@/styles/variables.scss';
+@use '../../../styles/variables' as *;
 
-.container {
-  background-color: $white;
-  padding: $spacing-xl;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-md;
+$ink: #0b1f4d;
 
-  h2 {
-    margin-bottom: $spacing-lg;
-  }
+.bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  select { padding: 10px 14px; border: 1px solid #dbe3f1; border-radius: 8px; background: #fff; font: 500 13px inherit; color: $ink; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; } }
+.source { margin-right: auto; font-size: 12px; color: $light-text; }
+.kpi { font-size: 22px !important; }
 
-  p {
-    color: $light-text;
-  }
-}
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.note { color: $light-text; font-size: 12px; }
+.empty { margin: 8px 0 0; font-size: 13px; color: $light-text; }
+
+.bars { list-style: none; display: flex; flex-direction: column; gap: 12px;
+  li { display: grid; grid-template-columns: 150px 1fr 60px 52px; align-items: center; gap: 12px; font-size: 13px; color: $ink; }
+  span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  b { text-align: right; } small { color: $light-text; text-align: right; font-size: 11px; } }
+.track { height: 12px; border-radius: 6px; background: #eef2f9; overflow: hidden; i { display: block; height: 100%; border-radius: 6px; } }
+
+.good { color: #0c7a4b; font-weight: 700; }
+.warn { color: #b26a00; font-weight: 700; }
+.error { margin: 0; padding: 10px 14px; border-radius: 8px; background: #fdeaea; color: #c02626; font-size: 13px;
+  button { border: 0; background: none; color: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; } }
+
+@media (max-width: $breakpoint-lg) { .two { grid-template-columns: 1fr; } }
+@media (max-width: $breakpoint-sm) { .bars li { grid-template-columns: 100px 1fr 48px; small { display: none; } } }

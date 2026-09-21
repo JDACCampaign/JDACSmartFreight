@@ -7,8 +7,8 @@ export const WHATSAPP = 'https://wa.me/919429494436';
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link href="/" className={`${s.logo} ${light ? s.logoLight : ''}`}>
-      <span className={s.logoMark}>JD<em>A</em>C</span>
-      <span className={s.logoTag}>THE LOGISTICS AGGREGATOR</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={light ? '/jdac-logo-light.png' : '/jdac-logo.png'} alt="JDAC - The Logistics Aggregator" className={s.logoImg} />
     </Link>
   );
 }

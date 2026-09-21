@@ -3,11 +3,11 @@ import s from './Landing.module.scss';
 import { Logo, WHATSAPP } from './Header';
 
 const QUICK = ['Home', 'Services', 'How It Works', 'Why JDAC', 'Coverage', 'Contact'];
-const SERVICES = ['Parcel Cargo', 'Part Load (LTL)', 'Full Truck Load (FTL)', 'Special Cargo', 'Rate Calculator', 'Transporter Network'];
+const SERVICES = ['Parcel Cargo', 'Surface Cargo', 'Special Cargo', 'Rate Calculator', 'Transporter Network'];
 
 export default function Footer() {
   return (
-    <footer id="contact" className={s.footer}>
+    <footer className={s.footer}>
       <div className={`${s.wrap} ${s.footGrid}`}>
         <div>
           <Logo light />
